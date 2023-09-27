@@ -1,0 +1,14 @@
+POST http://localhost:8080/spring-0.0.1-SNAPSHOT/ws
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:us="http://www.webservicesoap.org/birthday">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <us:getBirthdayRequest>
+            <us:day>15</us:day>
+            <us:month>2</us:month>
+            <us:year>1994</us:year>
+        </us:getBirthdayRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
