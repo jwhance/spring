@@ -13,6 +13,7 @@ public class BirthdayService {
         GetAgeResponse getAgeResponse = new GetAgeResponse();
         if(validateDay(request) && validateMonth(request) && validateYear(request)) {
             getAgeResponse.setAge(getAge(request.getDay(), request.getMonth(), request.getYear()));
+            getAgeResponse.setName(request.getName());
         }
         return getAgeResponse;
     }

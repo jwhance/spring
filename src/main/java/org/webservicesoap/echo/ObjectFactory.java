@@ -6,7 +6,7 @@
 //
 
 
-package org.webservicesoap.birthday;
+package org.webservicesoap.echo;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the org.webservicesoap.birthday package. 
+ * generated in the org.webservicesoap.echo package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,26 +30,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.webservicesoap.birthday
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.webservicesoap.echo
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link GetBirthdayRequest }
+     * Create an instance of {@link GetEchoResponse }
      * 
      */
-    public GetBirthdayRequest createGetBirthdayRequest() {
-        return new GetBirthdayRequest();
+    public GetEchoResponse createGetEchoResponse() {
+        return new GetEchoResponse();
     }
 
     /**
-     * Create an instance of {@link GetAgeResponse }
+     * Create an instance of {@link GetEchoRequest }
      * 
      */
-    public GetAgeResponse createGetAgeResponse() {
-        return new GetAgeResponse();
+    public GetEchoRequest createGetEchoRequest() {
+        return new GetEchoRequest();
     }
 
 }

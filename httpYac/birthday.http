@@ -6,9 +6,10 @@ Content-Type: text/xml
     <soapenv:Header/>
     <soapenv:Body>
         <us:getBirthdayRequest>
-            <us:day>15</us:day>
-            <us:month>2</us:month>
-            <us:year>1994</us:year>
+            <us:day>7</us:day>
+            <us:month>10</us:month>
+            <us:year>1963</us:year>
+            <us:name>JoAnn</us:name>
         </us:getBirthdayRequest>
     </soapenv:Body>
 </soapenv:Envelope>

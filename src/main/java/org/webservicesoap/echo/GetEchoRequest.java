@@ -6,7 +6,7 @@
 //
 
 
-package org.webservicesoap.birthday;
+package org.webservicesoap.echo;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,8 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="age" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="stringToEcho" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,54 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "age",
-    "name"
+    "stringToEcho"
 })
-@XmlRootElement(name = "getAgeResponse")
-public class GetAgeResponse {
+@XmlRootElement(name = "getEchoRequest")
+public class GetEchoRequest {
 
-    protected int age;
     @XmlElement(required = true)
-    protected String name;
+    protected String stringToEcho;
 
     /**
-     * Gets the value of the age property.
-     * 
-     */
-    public int getAge() {
-        return age;
-    }
-
-    /**
-     * Sets the value of the age property.
-     * 
-     */
-    public void setAge(int value) {
-        this.age = value;
-    }
-
-    /**
-     * Gets the value of the name property.
+     * Gets the value of the stringToEcho property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public String getStringToEcho() {
+        return stringToEcho;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the stringToEcho property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setStringToEcho(String value) {
+        this.stringToEcho = value;
     }
 
 }
