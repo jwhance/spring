@@ -4,8 +4,13 @@ import org.springframework.stereotype.Service;
 import org.webservicesoap.birthday.GetAgeResponse;
 import org.webservicesoap.birthday.GetBirthdayRequest;
 
+import com.example.spring.dao.RequestSystemIdDao;
+import com.example.spring.entity.RequestSystemId;
+
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class BirthdayService {
@@ -13,6 +18,27 @@ public class BirthdayService {
         GetAgeResponse getAgeResponse = new GetAgeResponse();
         if(validateDay(request) && validateMonth(request) && validateYear(request)) {
             getAgeResponse.setAge(getAge(request.getDay(), request.getMonth(), request.getYear()));
+
+            RequestSystemIdDao requestSystemIdDao = new RequestSystemIdDao();
+            List<RequestSystemId> requestSystemIds = requestSystemIdDao.getRequestSystemIds();
+
+            if (requestSystemIds.size() > 0) {
+                getAgeResponse.setRequestSystemInfo(requestSystemIds.get(0).toString());
+            } else {
+                getAgeResponse.setRequestSystemInfo("None found");
+            }
+
+            RequestSystemId requestSystemId = new RequestSystemId();
+            requestSystemId.setCreateTimestamp(new Date(System.currentTimeMillis()));
+            requestSystemId.setCreateId("JOE");
+            requestSystemId.setUpdateTimestamp(new Date(System.currentTimeMillis()));
+            requestSystemId.setUpdateId("JOE");
+            requestSystemId.setSystemName("HibernateSystemCreated");
+            requestSystemId.setEmailAddrText("jwh20@hotmail.com");
+
+            requestSystemIdDao.saveRequestSystemId(requestSystemId);
+
+
         }
         return getAgeResponse;
     }

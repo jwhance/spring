@@ -9,6 +9,7 @@ Content-Type: text/xml
             <us:day>15</us:day>
             <us:month>2</us:month>
             <us:year>1994</us:year>
+            <us:requestSystemId>2</us:requestSystemId>
         </us:getBirthdayRequest>
     </soapenv:Body>
 </soapenv:Envelope>

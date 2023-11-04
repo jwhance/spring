@@ -9,6 +9,7 @@
                 <xs:element name="day" type="xs:int" />
                 <xs:element name="month" type="xs:int" />
                 <xs:element name="year" type="xs:int" />
+                <xs:element name="requestSystemId" type="xs:int" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -17,6 +18,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="age" type="xs:int" />
+                <xs:element name="requestSystemInfo" type="xs:string" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
