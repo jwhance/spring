@@ -1,5 +1,8 @@
 package com.example.spring.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.springframework.stereotype.Service;
 import org.webservicesoap.birthday.GetAgeResponse;
 import org.webservicesoap.birthday.GetBirthdayRequest;
@@ -9,9 +12,13 @@ import java.time.Period;
 
 @Service
 public class BirthdayService {
-    public GetAgeResponse age(GetBirthdayRequest request){
+    Logger logger = LogManager.getLogger(BirthdayService.class);
+
+    public GetAgeResponse age(GetBirthdayRequest request) {
+        logger.info("Request received...");
+
         GetAgeResponse getAgeResponse = new GetAgeResponse();
-        if(validateDay(request) && validateMonth(request) && validateYear(request)) {
+        if (validateDay(request) && validateMonth(request) && validateYear(request)) {
             getAgeResponse.setAge(getAge(request.getDay(), request.getMonth(), request.getYear()));
         }
         return getAgeResponse;
